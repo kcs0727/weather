@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base{
+    h1{
+        @apply text-4xl max-md:text-3xl;
+    }
+    h2{
+        @apply text-3xl max-md:text-2xl;
+    }
+    h3{
+        @apply text-2xl max-md:text-xl;
+    }
+    h4{
+        @apply text-lg max-md:text-base;
+    }
+}
+
+@layer components{
+
+    .leftchild{
+        @apply w-[85%] h-4/9 bg-white/30 rounded-2xl p-6 text-black flex flex-col justify-around sm:w-4/5 md:w-[45%] md:h-full lg:w-full lg:h-4/9 lg:ml-10 xl:w-[90%] xl:ml-0 border-2 border-transparent hover:border-black;
+    }
+
+    .metric{
+        @apply w-[45%] h-[45%] bg-white/30 rounded-2xl p-3 flex items-center justify-around gap-x-3 md:w-[22%] md:h-full md:p-6 md:gap-x-1
+        border-2 border-transparent hover:border-black;
+    }
+
+    .rowtwochild{
+        @apply w-full h-[45%] bg-white/30 rounded-2xl p-4 flex flex-col justify-around md:p-6 md:w-[45%] md:h-full
+        border-2 border-transparent hover:border-black;
+    }
+
+    .reportchild{
+        @apply w-[32%] h-[45%] bg-white/30 rounded-2xl p-2 flex flex-col items-center justify-around  md:w-[15%] md:h-full
+        border-2 border-transparent hover:border-black;
+    }
+}

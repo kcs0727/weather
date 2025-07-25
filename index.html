@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="icon" type="image/x-icon" href="cloudy.png">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body  class="bg-[linear-gradient(45deg,#caefd7,#f5bfd7,#abc9e9)] min-h-[100vh] text-gray-900">
+
+    <!-- nav bar -->
+    <nav class="h-[10vh] flex justify-center items-center">
+
+        <div class="w-[80%] md:w-[60%] lg:w-1/3 h-[60%] relative" spellcheck="false">
+            <input type="text" class="searchfield bg-transparent text-xl text-blue-900 h-full w-full px-4 border-3 border-black rounded-full outline-none" placeholder="search cityname">
+            <i class="fa-solid fa-magnifying-glass absolute right-5 top-1/3 hover:bg-sky-400 hover:scale-125"></i>
+        </div>
+    </nav>
+
+    <!-- main content -->
+    <div class="main min-h-[600px] h-[90vh] lg:max-h-[1000px] flex flex-col lg:flex-row">
+
+
+        <!-- leftdiv -->
+        <div class="leftdiv min-h-[600px] w-full flex flex-col justify-evenly items-center 
+                    md:min-h-[300px] md:h-[300px] md:flex-row 
+                    lg:h-full lg:w-1/4 lg:min-w-[280px] lg:flex-col">
+
+            <div class="temperature leftchild">
+                <div class="description flex flex-col gap-3">
+                    <h1 id="city">Cityname</h1>
+                    <h2><span id="temp">0</span>&deg;C</h2>
+                    <h3 id="sky">sky description</h3>
+                </div>
+                <div class="calender flex flex-col gap-1">
+                    <hr>
+                    <div class="date flex items-center gap-1">
+                        <i class="fa-solid fa-calendar-days text-teal-700"></i>
+                        <h4 id="date">date</h4>
+                    </div>
+                    <div class="time flex items-center gap-1">
+                        <i class="fa-regular fa-clock text-teal-700"></i>
+                        <h4 id="time">time</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nextfive leftchild">
+                <h2>Coming 5 days</h2>
+                <div class="flex flex-col gap-2 w-full">
+
+                    <div class="forecastrow flex items-center justify-between">
+                        <div class="flex gap-1 items-center">
+                            <i class="fa-solid fa-cloud-moon forecasticon"></i>
+                            <h4><span class="forecasttemp">0</span>&deg;C</h4>
+                        </div>
+                        <h4 class="forecastday">sun</h4>
+                        <h4 class="forecastdate">01-01-2025</h4>
+                    </div>
+                    <div class="forecastrow flex items-center justify-between">
+                        <div class="flex gap-1 items-center">
+                            <i class="fa-solid fa-cloud-moon forecasticon"></i>
+                            <h4><span class="forecasttemp">0</span>&deg;C</h4>
+                        </div>
+                        <h4 class="forecastday">mon</h4>
+                        <h4 class="forecastdate">01-01-2025</h4>
+                    </div>
+                    <div class="forecastrow flex items-center justify-between">
+                        <div class="flex gap-1 items-center">
+                            <i class="fa-solid fa-cloud-moon forecasticon"></i>
+                            <h4><span class="forecasttemp">0</span>&deg;C</h4>
+                        </div>
+                        <h4 class="forecastday">tue</h4>
+                        <h4 class="forecastdate">01-01-2025</h4>
+                    </div>
+                    <div class="forecastrow flex items-center justify-between">
+                        <div class="flex gap-1 items-center">
+                            <i class="fa-solid fa-cloud-moon forecasticon"></i>
+                            <h4><span class="forecasttemp">0</span>&deg;C</h4>
+                        </div>
+                        <h4 class="forecastday">wed</h4>
+                        <h4 class="forecastdate">01-01-2025</h4>
+                    </div>
+                    <div class="forecastrow flex items-center justify-between">
+                        <div class="flex gap-1 items-center">
+                            <i class="fa-solid fa-cloud-moon forecasticon"></i>
+                            <h4><span class="forecasttemp">0</span>&deg;C</h4>
+                        </div>
+                        <h4 class="forecastday">thu</h4>
+                        <h4 class="forecastdate">01-01-2025</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- rightdiv -->
+        <div class="rightdiv min-h-[1000px] h-full w-[85%] mx-auto flex flex-col justify-evenly
+                    lg:w-3/4 lg:mx-10 md:min-h-[600px]">
+
+            <div class="rightchild w-full h-[30%] flex justify-between flex-wrap content-between md:h-1/4">
+                <div class="metric">
+                    <i class="fa-solid fa-water text-4xl text-gray-700"></i>
+                    <div>
+                        <h4>Pressure</h4>
+                        <h4><span id="pressure">0</span>hPa</h4>
+                    </div>
+                </div>
+                <div class="metric">
+                    <i class="fa-solid fa-water text-4xl text-gray-700"></i>
+                    <div>
+                        <h4>Humidity</h4>
+                        <h4><span id="humidity">0</span>%</h4>
+                    </div>
+                </div>
+                <div class="metric">
+                    <i class="fa-solid fa-water text-4xl text-gray-700"></i>
+                    <div>
+                        <h4>Feels like</h4>
+                        <h4><span id="feelslike">0</span>&deg;C</h4>
+                    </div>
+                </div>
+                <div class="metric">
+                    <i class="fa-solid fa-water text-4xl text-gray-700"></i>
+                    <div>
+                        <h4>Wind speed</h4>
+                        <h4><span id="windspeed">0</span>m/s</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightchild w-full h-[30%] flex justify-between flex-wrap content-between md:h-1/4">
+                <div class="air rowtwochild">
+                    <h3 class="text-center">Air Quality Index (AQI)</h3>
+                    <div class="flex justify-between items-center">
+                        <i class="fa-solid fa-wind text-3xl text-sky-600"></i>
+                        <div>
+                            <h4>CO</h4>
+                            <h4 id="co">0</h4>
+                        </div>
+                        <div>
+                            <h4>NO<sub>2</sub> </h4>
+                            <h4 id="no2">0</h4>
+                        </div>
+                        <div>
+                            <h4>O<sub>3</sub></h4>
+                            <h4 id="o3">0</h4>
+                        </div>
+                        <div>
+                            <h4>SO<sub>2</sub></h4>
+                            <h4 id="so2">0</h4>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="sun rowtwochild">
+                    <h3 class="text-center">Sunrise & Sunset</h3>
+                    <div class="flex items-center justify-around">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-sun text-5xl text-orange-400"></i>
+                            <div>
+                                <h4>Sunrise</h4>
+                                <h4 id="sunrise">6:00 AM</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-moon text-5xl text-gray-600"></i>
+                            <div>
+                                <h4>Sunset</h4>
+                                <h4 id="sunset">6:00 PM</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightchild w-full h-[30%] flex flex-col justify-between md:h-1/4">
+                <h3 class="pl-4">Next hourly report</h3>
+                <div class="flex justify-between w-full h-[85%] flex-wrap content-between md:h-[80%]">
+                    <div class="reportchild">
+                        <h4 class="reporttime">5:00 AM</h4>
+                        <i class="fa-solid fa-cloud-sun-rain reporticon text-3xl "></i>
+                        <h4><span class="reporttemp">0</span>&deg;C</h4>
+                    </div>
+                    <div class="reportchild">
+                        <h4 class="reporttime">9:00 AM</h4>
+                        <i class="fa-solid fa-cloud-sun-rain reporticon text-3xl"></i>
+                        <h4><span class="reporttemp">0</span>&deg;C</h4>
+                    </div>
+                    <div class="reportchild">
+                        <h4 class="reporttime">1:00 PM</h4>
+                        <i class="fa-solid fa-cloud-sun-rain reporticon text-3xl"></i>
+                        <h4><span class="reporttemp">0</span>&deg;C</h4>
+                    </div>
+                    <div class="reportchild">
+                        <h4 class="reporttime">5:00 PM</h4>
+                        <i class="fa-solid fa-cloud-sun-rain reporticon text-3xl"></i>
+                        <h4><span class="reporttemp">0</span>&deg;C</h4>
+                    </div>
+                    <div class="reportchild">
+                        <h4 class="reporttime">9:00 PM</h4>
+                        <i class="fa-solid fa-cloud-sun-rain reporticon text-3xl"></i>
+                        <h4><span class="reporttemp">0</span>&deg;C</h4>
+                    </div>
+                    <div class="reportchild">
+                        <h4 class="reporttime">12:00 AM</h4>
+                        <i class="fa-solid fa-cloud-sun-rain reporticon text-3xl"></i>
+                        <h4><span class="reporttemp">0</span>&deg;C</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="function.js"></script>
+    
+</body>
+</html>
