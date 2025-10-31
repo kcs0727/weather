@@ -142,7 +142,7 @@ search.addEventListener("click",async()=>{
 
         //AQI
         try{
-            let aqiresponse= await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${api_key}`);
+            let aqiresponse= await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${api_key}`);
             let aqidata= await aqiresponse.json();
             getaqi(aqidata);
         }
